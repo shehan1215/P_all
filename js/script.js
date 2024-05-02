@@ -13,15 +13,15 @@
 //     console.log(error);
 // })
 
-function getData(key, callback) {
+function getData(key) {
     return new Promise((resolve, reject) => {
         console.log("getting data: ");
         setTimeout(()=>{
             if(key === "abc123"){
                 const data = "Raw data";
-                callback(null,data)
+                resolve(data);
             }else{
-                callback("Invalid key", null)
+                reject("Invalid key");
             }
 
         }, 1000);

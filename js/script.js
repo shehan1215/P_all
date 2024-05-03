@@ -29,10 +29,21 @@ function getData(key) {
     })
 }
 
-function processData(rawData, callback){
-    console.log("Processing Data...");
-    setTimeout(() => {
-        const processData = rawData+" is processed";
-        callback(null,processData)
-    }, 1000);
+function processData(rawData){
+    return new Promise((resolve,reject)=>{
+        console.log("Processing Data...");
+        setTimeout(() => {
+            const processData = rawData+" is processed";
+            resolve(processData)
+        }, 1000);
+    })
 }
+
+function display(){
+    getData("abc123").then(result=>{
+        return processData(result);
+    }).catch(error => {
+        console.log(error);
+    })
+}
+display();

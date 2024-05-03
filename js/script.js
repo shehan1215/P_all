@@ -27,6 +27,12 @@ function getData(key) {
         }, 1000);
       
     })
-    
-    
+}
+
+function processData(rawData, callback){
+    console.log("Processing Data...");
+    setTimeout(() => {
+        const processData = rawData+" is processed";
+        callback(null,processData)
+    }, 1000);
 }

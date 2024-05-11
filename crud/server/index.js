@@ -8,14 +8,16 @@ app.use(cors())
 
 const PORT = process.env.PORT || 8080;
 
-mongoose.connect(process.env.MONGODB_URL)
-.then(() => console.log("Connected to Database"))
-.catch((err) => console.error(err));
+//schema
 
 app.get("/", (req,res)=>{
     res.json({message : "Server is not problem"})
 })
 
+mongoose.connect(process.env.MONGODB_URL)
+.then(() => {
+    console.log("Connected to Database");
+    app.listen(PORT,()=>console.log("Server is running"))
+}).catch((err) => console.error(err));
 
 
-app.listen(PORT,()=>console.log("Server is running"))

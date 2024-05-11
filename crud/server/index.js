@@ -1,5 +1,6 @@
-const express = require("express");
-const cors = require("cors");
+const express = require("express")
+const cors = require("cors")
+const mongoose = require("mongoose")
 
 const app = express()
 app.use(cors())
@@ -10,4 +11,11 @@ app.get("/", (req,res)=>{
     res.json({message : "Server is not problem"})
 })
 
-app.listen(PORT,()=>console.log("server is runing"))
+mongoose.connect("mongodb://127.0.0.1:27017/crudoperation")
+.then(()=>{
+    console.log("connect to DB")
+    app.listen(PORT,()=>console.log("Server is running"))
+})
+.catch((err)=>console.log(err))
+
+

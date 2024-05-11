@@ -1,21 +1,21 @@
 const express = require("express")
 const cors = require("cors")
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
 
 const app = express()
 app.use(cors())
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080;
+
+mongoose.connect(process.env.MONGODB_URL)
+.then(() => console.log("Connected to Database"))
+.catch((err) => console.error(err));
 
 app.get("/", (req,res)=>{
     res.json({message : "Server is not problem"})
 })
 
-mongoose.connect("mongodb://127.0.0.1:27017/crudoperation")
-.then(()=>{
-    console.log("connect to DB")
-    app.listen(PORT,()=>console.log("Server is running"))
-})
-.catch((err)=>console.log(err))
 
 
+app.listen(PORT,()=>console.log("Server is running"))

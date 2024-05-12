@@ -19,11 +19,16 @@ const schemaData = mongoose.Schema({
 })
 const userModel = mongoose.model("user",schemaData)
 
+// read the data
 app.get("/", async(req,res)=>{
     const data = await userModel.find({})
     res.json({success : true, data:data})
 })
 
+// create data or save data
+app.post("/create", (req, res)=>{
+    console.log(req.body);
+})
 
 
 mongoose.connect(process.env.MONGODB_URL)

@@ -10,17 +10,21 @@ app.use(cors())
 const PORT = process.env.PORT || 8080;
 
 //schema
-const schema = mongoose.Schema({
+const schemaData = mongoose.Schema({
     name: String,
     email : String,
     mobile : Number,
 },{
-    Timestamp : true
+    Timestamps : true
+})
+const userModel = mongoose.model("user",schemaData)
+
+app.get("/", async(req,res)=>{
+    const data = await userModel.find({})
+    res.json({success : true, data:data})
 })
 
-app.get("/", (req,res)=>{
-    res.json({message : "Server is not problem"})
-})
+
 
 mongoose.connect(process.env.MONGODB_URL)
 .then(() => {

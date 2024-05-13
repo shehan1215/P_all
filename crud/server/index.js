@@ -6,6 +6,7 @@ const dotenv = require("dotenv").config();
 
 const app = express()
 app.use(cors())
+app.use(express.json())
 
 const PORT = process.env.PORT || 8080;
 
@@ -26,8 +27,11 @@ app.get("/", async(req,res)=>{
 })
 
 // create data or save data
-app.post("/create", (req, res)=>{
+app.post("/create", async(req, res)=>{
     console.log(req.body);
+    const data = new userModel(req.body)
+    await data.save()
+    res.send({success : true, message : "data save successfully"})
 })
 
 

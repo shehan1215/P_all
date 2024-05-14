@@ -43,6 +43,13 @@ app.put("/update",async(req,res)=>{
     res.send({success:true, message:"data update successfull" ,data : data})
 })
 
+//data delete
+app.delete("/delete/:id",async(req,res)=>{
+    const id = req.params.id
+    console.log(id);
+    const data = await userModel.deleteOne({_id:id})
+    res.send({success:true, message:"data deleted successfull" ,data : data})
+})
 
 mongoose.connect(process.env.MONGODB_URL)
 .then(() => {

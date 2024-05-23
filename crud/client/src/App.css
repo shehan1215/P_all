@@ -31,3 +31,12 @@ body{
   align-items: center;
   justify-content: center;
 }
+.addContainer form{
+  width: 420px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}

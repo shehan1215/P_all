@@ -17,7 +17,7 @@ function App() {
             <label htmlFor="mobile">Mobile: </label>
             <input type="number" id="mobile" name="mobile"/>
 
-            <button>Submit</button>
+            <button className="btn">Submit</button>
           </form>
         </div>
       </div>

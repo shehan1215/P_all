@@ -40,3 +40,18 @@ body{
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
+.addContainer form label{
+  font-size: 20px;
+}
+.addContainer form input{
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.addContainer form button{
+  background-color: royalblue;
+  color: white;
+  font-weight: 500;
+  margin-top: 20px;
+}

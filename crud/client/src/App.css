@@ -55,3 +55,6 @@ body{
   font-weight: 500;
   margin-top: 20px;
 }
+.addContainer form .close-btn{
+  margin-left: auto;
+}

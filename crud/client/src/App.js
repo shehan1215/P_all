@@ -3,12 +3,16 @@ import './App.css';
 import { MdClose } from "react-icons/md";
 
 function App() {
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+  }
   return (
     <>
       <div className="container">
         <button className="btn btn-add">Add </button>
         <div className="addContainer">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="close-btn"><MdClose /></div>
             <label htmlFor="name">Name: </label>
             <input type="text" id="name" name="name"/>

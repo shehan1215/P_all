@@ -57,4 +57,13 @@ body{
 }
 .addContainer form .close-btn{
   margin-left: auto;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  border-radius: 20px;
+  border: 1px solid #000;
+  cursor: pointer;
 }

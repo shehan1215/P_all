@@ -67,3 +67,24 @@ body{
   border: 1px solid #000;
   cursor: pointer;
 }
+.tableContainer{
+  margin-top: 60px;
+
+}
+.tableContainer table{
+  border: 2px solid rgba(62, 54, 54, 0.274);
+  box-shadow: 5px 5px 10px rgb(197, 197, 197);
+  border-radius: 5px;
+}
+.tableContainer table thead tr{
+  background-color: rgb(141, 141, 255);
+}
+.tableContainer table thead tr th,
+.tableContainer table tbody tr td{
+  min-width: 200px;
+  padding: 5px;
+  text-align: center;
+}
+.tableContainer table tbody tr td{
+  border-bottom: 1px solid rgba(81, 71, 71, 0.37);
+}

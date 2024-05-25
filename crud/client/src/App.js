@@ -72,6 +72,36 @@ function App() {
           )
         }
 
+        <div className='tableContainer'>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                dataList.map((el)=>{
+                   return(
+                    <tr>
+                      <td>{el.name}</td>
+                      <td>{el.email}</td>
+                      <td>{el.mobile}</td>
+                      <td></td>
+                    </tr>
+                   ) 
+                })
+              }
+            </tbody>
+          </table>
+        </div>
+
+
+
+
       </div>
     </>
   );

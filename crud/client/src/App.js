@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { MdClose } from "react-icons/md";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios'
 
 axios.defaults.baseURL = "http://localhost:3000/"
@@ -13,6 +13,8 @@ function App() {
     email: "",
     mobile: "",
   })
+  const [dataList, setDataList] = useState([])
+
   const hadleOnchange = (e)=>{
     const {value,name} = e.target
     setFormData((prev)=>{
@@ -25,9 +27,26 @@ function App() {
 
   const handleSubmit = async(e)=>{
     e.preventDefault()
-    const data = await axios.post("/create",formData)
+    const data = await axios.post("http://localhost:8080/create",formData)
     console.log(data)
+    if(data.data.success){
+      setaddSection(false)
+      alert(data.data.message)
+    }
   }
+  const getFetchData = async()=>{
+    const data = await axios.get("http://localhost:8080/")
+    console.log(data)
+    if(data.data.success){
+      setDataList(data.data.data)
+    }
+  }
+  useEffect(()=>{
+    getFetchData()
+  },[])
+
+  console.log(dataList);
+
   return (
     <>
       <div className="container">

@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8080;
 const schemaData = mongoose.Schema({
     name: String,
     email : String,
-    mobile : Number,
+    mobile : String,
 },{
     Timestamps : true
 })

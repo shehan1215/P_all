@@ -15,6 +15,12 @@ function App() {
     email: "",
     mobile: "",
   })
+  const [formDataEdit, setFormDataEdit] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    id: ""
+  })
   const [dataList, setDataList] = useState([])
 
   const hadleOnchange = (e)=>{
@@ -59,10 +65,19 @@ const handleDelete = async(id)=>{
 const handleUpdate = async(id)=>{
 
 }
-const hadleEditOnchange = async()=>{
-
+const hadleEditOnchange = async(e)=>{
+  const {value,name} = e.target
+  setFormDataEdit((prev)=>{
+    return{
+      ...prev,
+      [name]:value
+    }
+  })
 }
-
+const handleEdit = (el)=>{
+  setFormDataEdit(el)
+  setEditSection(true)
+}
   return (
     <>
       <div className="container">
@@ -74,6 +89,7 @@ const hadleEditOnchange = async()=>{
                 handleSubmit = {handleSubmit}
                 hadleOnchange = {hadleOnchange}
                 handleclose = {()=>setaddSection(false)}
+                rest={formData}
               />
           )
         }
@@ -83,6 +99,7 @@ const hadleEditOnchange = async()=>{
               handleSubmit = {handleUpdate}
               hadleOnchange = {hadleEditOnchange}
               handleclose = {()=>setEditSection(false)}
+              rest={formDataEdit}
           />
           )
         } 
@@ -107,7 +124,7 @@ const hadleEditOnchange = async()=>{
                       <td>{el.email}</td>
                       <td>{el.mobile}</td>
                       <td>
-                        <button className='btn btn-edit'>Edit</button>
+                        <button className='btn btn-edit' onClick={()=>handleEdit(el)}>Edit</button>
                         <button className='btn btn-delete' onClick={()=>handleDelete(el._id)}>Delete</button>
                       </td>
                     </tr>

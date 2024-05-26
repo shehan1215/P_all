@@ -9,6 +9,7 @@ axios.defaults.baseURL = "http://localhost:3000/"
 
 function App() {
   const [addSection,setaddSection] = useState(false)
+  const[editSection, setEditSection] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,6 +59,9 @@ const handleDelete = async(id)=>{
 const handleUpdate = async(id)=>{
 
 }
+const hadleEditOnchange = async()=>{
+
+}
 
   return (
     <>
@@ -73,6 +77,15 @@ const handleUpdate = async(id)=>{
               />
           )
         }
+        {
+          editSection &&(
+            <Formtable
+              handleSubmit = {handleUpdate}
+              hadleOnchange = {hadleEditOnchange}
+              handleclose = {()=>setEditSection(false)}
+          />
+          )
+        } 
 
         <div className='tableContainer'>
           <table>

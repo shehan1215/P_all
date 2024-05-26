@@ -3,6 +3,7 @@ import './App.css';
 import { MdClose } from "react-icons/md";
 import { useEffect, useState } from 'react';
 import axios from 'axios'
+import Formtable from './Component/formtable';
 
 axios.defaults.baseURL = "http://localhost:3000/"
 
@@ -54,6 +55,10 @@ const handleDelete = async(id)=>{
   }
 }
 
+const handleUpdate = async(id)=>{
+
+}
+
   return (
     <>
       <div className="container">
@@ -61,21 +66,11 @@ const handleDelete = async(id)=>{
         
         {
           addSection && (
-            <div className="addContainer">
-            <form onSubmit={handleSubmit}>
-              <div className="close-btn" onClick={()=>setaddSection (false)}><MdClose /></div>
-              <label htmlFor="name">Name: </label>
-              <input type="text" id="name" name="name" onChange={hadleOnchange}/>
-  
-              <label htmlFor="email">E-mail: </label>
-              <input type="email" id="email" name="email" onChange={hadleOnchange}/>
-  
-              <label htmlFor="mobile">Mobile: </label>
-              <input type="number" id="mobile" name="mobile" onChange={hadleOnchange}/>
-  
-              <button className="btn">Submit</button>
-            </form>
-          </div>
+              <Formtable
+                handleSubmit = {handleSubmit}
+                hadleOnchange = {hadleOnchange}
+                handleclose = {()=>setaddSection(false)}
+              />
           )
         }
 

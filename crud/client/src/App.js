@@ -32,6 +32,7 @@ function App() {
     if(data.data.success){
       setaddSection(false)
       alert(data.data.message)
+      getFetchData()
     }
   }
   const getFetchData = async()=>{
@@ -45,7 +46,13 @@ function App() {
     getFetchData()
   },[])
 
-  console.log(dataList);
+const handleDelete = async(id)=>{
+  const data = await axios.delete("http://localhost:8080/delete/"+id)
+  if(data.data.success){
+    getFetchData()
+    alert(data.data.message)
+  }
+}
 
   return (
     <>
@@ -84,6 +91,7 @@ function App() {
             </thead>
             <tbody>
               {
+                dataList[0] ? (
                 dataList.map((el)=>{
                    return(
                     <tr>
@@ -92,11 +100,14 @@ function App() {
                       <td>{el.mobile}</td>
                       <td>
                         <button className='btn btn-edit'>Edit</button>
-                        <button className='btn btn-delete'>Delete</button>
+                        <button className='btn btn-delete' onClick={()=>handleDelete(el._id)}>Delete</button>
                       </td>
                     </tr>
                    ) 
-                })
+                }))
+                :(
+                  <p style={{alignItems:"center"}}>No data</p>
+                )
               }
             </tbody>
           </table>

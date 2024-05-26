@@ -19,7 +19,7 @@ function App() {
     name: "",
     email: "",
     mobile: "",
-    id: ""
+    _id: ""
   })
   const [dataList, setDataList] = useState([])
 
@@ -41,6 +41,11 @@ function App() {
       setaddSection(false)
       alert(data.data.message)
       getFetchData()
+      setFormData({
+        name: "",
+        email: "",
+        mobile: ""
+      })
     }
   }
   const getFetchData = async()=>{
@@ -62,8 +67,14 @@ const handleDelete = async(id)=>{
   }
 }
 
-const handleUpdate = async(id)=>{
-
+const handleUpdate = async(e)=>{
+  e.preventDefault()
+  const data = await axios.put("http://localhost:8080/update",formDataEdit)
+  if(data.data.success){
+    getFetchData()
+    alert(data.data.message)
+    setEditSection(false)
+  }
 }
 const hadleEditOnchange = async(e)=>{
   const {value,name} = e.target

@@ -19,4 +19,18 @@ router.post('/post/save',(req,res)=>{
     })
 })
 
+router.get('/posts',(req, res)=>{
+    Posts.find().exec((err, posts)=>{
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+        return res.status(200).json({
+            success:true,
+            existingPosts:posts
+        });
+    })
+})
+
 module.exports = router;

@@ -3,6 +3,15 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+//import routes
+const postRoutes = require('./routes/posts');
+
+//app middleware
+app.use(bodyParser.json());
+
+//route middleware
+app.use(postRoutes);
+
 const port = 8000;
 const DB_URL = 'mongodb+srv://shehan:shehan123@mernapp.symu0zh.mongodb.net/crudMern?retryWrites=true&w=majority&appName=mernApp';
 

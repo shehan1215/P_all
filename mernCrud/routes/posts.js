@@ -35,7 +35,23 @@ router.get('/posts',(req, res)=>{
 })
 
 // To Update the Posts
-
+router.put('/posts/update/:id',(req, res)=>{
+    Posts.findByIdAndUpdate(
+        req.params.id,{
+            $set:req.body
+        },
+        (err,post)=>{
+            if(err){
+                return res.status(400).json({
+                    error:err
+                });
+            }
+            return res.status(200).json({
+                success:"Successfully updated"
+            })
+        }
+    )
+})
 
 
 module.exports = router;

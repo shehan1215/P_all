@@ -19,6 +19,7 @@ router.post('/post/save',(req,res)=>{
     })
 })
 
+// To Get the Posts
 router.get('/posts',(req, res)=>{
     Posts.find().exec((err, posts)=>{
         if(err){
@@ -32,5 +33,9 @@ router.get('/posts',(req, res)=>{
         });
     })
 })
+
+// To Update the Posts
+
+
 
 module.exports = router;

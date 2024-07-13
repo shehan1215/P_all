@@ -10,7 +10,7 @@ export default class App extends Component {
     };
   }
 
-
+  // React inbuild method componentDidMount()
   componentDidMount(){ 
     this.retrievePosts();
   }

@@ -10,6 +10,11 @@ export default class App extends Component {
     };
   }
 
+
+  componentDidMount(){ 
+    this.retrievePosts();
+  }
+
   retrievePosts(){
     axios.get("http://localhost:8000/posts").then(res =>{
       if(res.data.success){

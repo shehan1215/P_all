@@ -21,7 +21,7 @@ export default class App extends Component {
         this.setState({
           posts:res.data.existingPosts
         })
-        console.log(this.state.posts); 
+        // console.log(this.state.posts); 
       }
     })
   }

@@ -21,7 +21,7 @@ export default class App extends Component {
         this.setState({
           posts:res.data.existingPosts
         })
-        console.log(this.state.posts);
+        console.log(this.state.posts); 
       }
     })
   }
@@ -29,7 +29,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        
+        {this.state.posts.map(posts=>(
+          <div>
+            <p>{posts.topic}</p>
+            <p>{posts.description}</p>
+            <p>{posts.postCategory}</p>
+          </div>
+        ))}
       </div>
     )
   }

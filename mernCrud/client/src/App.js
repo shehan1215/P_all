@@ -47,6 +47,12 @@ export default class App extends Component {
                 <td scope='row'>{posts.Topic}</td>
                 <td scope='row'>{posts.Desciption}</td>
                 <td scope='row'>{posts.PostCategory}</td>
+                  <a className='btn btn-warning' href='#'>
+                    <i className='fas fa-edit'></i>&nbsp;Edit
+                  </a>
+                  <a className='btn btn-danger' href='#'>
+                    <i className='far fa-trash-alt'></i>&nbsp;Delete
+                  </a>
               </tr>
             ))}
           </tbody>

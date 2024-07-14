@@ -29,13 +29,28 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {this.state.posts.map(posts=>(
-          <div>
-            <p>{posts.topic}</p>
-            <p>{posts.description}</p>
-            <p>{posts.postCategory}</p>
-          </div>
-        ))}
+        <p>All</p>
+        <table className='table'>
+          <thead>
+            <tr>
+              <th scope='col'>#</th>
+              <th scope='col'>Topic</th>
+              <th scope='col'>Desciption</th>
+              <th scope='col'>Post Category</th>
+              <th scope='col'>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.posts.map((posts,index)=>(
+              <tr>
+                <th scope='row'>{index+1}</th>
+                <td scope='row'>{posts.Topic}</td>
+                <td scope='row'>{posts.Desciption}</td>
+                <td scope='row'>{posts.PostCategory}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     )
   }

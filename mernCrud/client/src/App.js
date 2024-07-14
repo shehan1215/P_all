@@ -28,7 +28,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <p>All</p>
         <table className='table'>
           <thead>
@@ -44,9 +44,9 @@ export default class App extends Component {
             {this.state.posts.map((posts,index)=>(
               <tr>
                 <th scope='row'>{index+1}</th>
-                <td scope='row'>{posts.Topic}</td>
-                <td scope='row'>{posts.Desciption}</td>
-                <td scope='row'>{posts.PostCategory}</td>
+                <td>{posts.Topic}</td>
+                <td>{posts.Desciption}</td>
+                <td>{posts.PostCategory}</td>
                   <a className='btn btn-warning' href='#'>
                     <i className='fas fa-edit'></i>&nbsp;Edit
                   </a>

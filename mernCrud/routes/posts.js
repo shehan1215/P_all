@@ -34,6 +34,21 @@ router.get('/posts',(req, res)=>{
     })
 })
 
+// To get the specifc posts by using the id
+router.get("posts/:id",(req,res)=>{
+    let postId = req.params.id;
+    Posts.findById(postId,(err,post)=>{
+        if(err){
+            return res.status(400).json({
+                success:false,err
+            });
+        }
+        return res.status(200).json({
+            success:true,post
+        });
+    })
+})
+
 // To Update the Posts
 router.put('/posts/update/:id',(req, res)=>{
     Posts.findByIdAndUpdate(

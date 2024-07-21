@@ -45,8 +45,10 @@ export default class Home extends Component {
               <tr>
                 <th scope='row'>{index+1}</th>
                 <td>
-                  <a href={`/post/${post._id}`} style={{textDecorationColor:none}}></a>
-                  {posts.Topic}</td>
+                    <a href={`/post/${post._id}`} style={{textDecorationColor:none}}>
+                    {posts.Topic}
+                    </a>
+                  </td>
                 <td>{posts.Desciption}</td>
                 <td>{posts.PostCategory}</td>
                   <a className='btn btn-warning' href='#'>
@@ -60,6 +62,9 @@ export default class Home extends Component {
             ))}
           </tbody>
         </table>
+
+        <button className='btn btn-success'><a href='/add' style={{textDecoration:'none',color:'white'}}>Create New Post</a> </button>
+
       </div>
     )
   }

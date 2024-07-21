@@ -44,7 +44,9 @@ export default class Home extends Component {
             {this.state.posts.map((posts,index)=>(
               <tr>
                 <th scope='row'>{index+1}</th>
-                <td>{posts.Topic}</td>
+                <td>
+                  <a href={`/post/${post._id}`} style={{textDecorationColor:none}}></a>
+                  {posts.Topic}</td>
                 <td>{posts.Desciption}</td>
                 <td>{posts.PostCategory}</td>
                   <a className='btn btn-warning' href='#'>

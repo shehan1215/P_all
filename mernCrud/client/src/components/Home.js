@@ -45,7 +45,7 @@ export default class Home extends Component {
               <tr>
                 <th scope='row'>{index+1}</th>
                 <td>
-                    <a href={`/post/${post._id}`} style={{textDecorationColor:none}}>
+                    <a href={`/post/${post._id}`} style={{textDecorationColor:'none'}}>
                     {posts.Topic}
                     </a>
                   </td>

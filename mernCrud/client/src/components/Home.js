@@ -42,7 +42,7 @@ export default class Home extends Component {
           </thead>
           <tbody>
             {this.state.posts.map((posts,index)=>(
-              <tr>
+              <tr key={index}>
                 <th scope='row'>{index+1}</th>
                 <td>
                     <a href={`/post'/${posts._id}'`} style={{textDecorationColor:'none'}}>

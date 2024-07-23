@@ -12,7 +12,7 @@ export default class App extends Component {
       <BrowserRouter>
         <div className='container'>
           <NavBar/>
-          <Route exact path = "/" element ={Home}></Route>
+          <Route exact path = "/" element ={Home}/>
           <Route path = "/add" component={CreatePost}></Route>
           <Route path = "/edit/:id" component={EditPost}></Route>
           <Route path = "/post/:id" component={PostDetails}></Route>

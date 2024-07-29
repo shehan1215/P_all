@@ -24,6 +24,9 @@ export default class PostDetails extends Component {
 
 
   render() {
+
+    const {topic,description,postCategory} = this.state.post;
+
     return (
       <div>
         Post Detls

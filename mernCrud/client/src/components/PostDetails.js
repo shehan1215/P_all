@@ -28,8 +28,18 @@ export default class PostDetails extends Component {
     const {topic,description,postCategory} = this.state.post;
 
     return (
-      <div>
-        Post Detls
+      <div style={{marginTop:'20px'}}>
+        <h4>{topic}</h4>
+        <hr/>
+        <dl className='row'>
+          <dt className='col-sm-3'>Description</dt>
+          <dd className='col-sm-3'>{description}</dd>
+
+          <dt className='col-sm-3'>Post Category</dt>
+          <dd className='col-sm-3'>
+            {postCategory}
+          </dd>
+        </dl>
       </div>
     )
   }

@@ -10,6 +10,16 @@ export default class CreatePost extends Component {
       postCategory:""
     }
   }
+
+  handleInputChange = (e)=>{
+    const{name,value} = e.target;
+
+    this.setState({
+      ...this.state,
+      [name]:value
+    })
+  }
+
   render() {
     return (
       <div className='col-md-8 mt-4 mx-auto'>

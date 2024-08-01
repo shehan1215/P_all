@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 export default class CreatePost extends Component {
 
@@ -18,6 +19,19 @@ export default class CreatePost extends Component {
       ...this.state,
       [name]:value
     })
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    const{topic,description,postCategory} = this.state;
+
+    const data = {
+      topic:topic,
+      description:description,
+      postCategory:postCategory
+    }
+
   }
 
   render() {

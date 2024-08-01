@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
 
 export default class CreatePost extends Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+      topic:"",
+      description:"",
+      postCategory:""
+    }
+  }
   render() {
     return (
       <div className='col-md-8 mt-4 mx-auto'>
@@ -37,7 +46,6 @@ export default class CreatePost extends Component {
             <i className='far fa-check-square'></i>
             &nbsp;save
           </button>
-
 
         </form>
       </div>

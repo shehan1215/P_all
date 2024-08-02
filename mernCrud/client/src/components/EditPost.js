@@ -34,6 +34,7 @@ export default class EditPost extends Component {
     }
     axios.put(`/posts/update/${id}`,data).then((res)=>{
       if(res.data.success){
+        alert("Your Post Updated...")
         this.setState({
           topic:"",
           description:"",

@@ -52,7 +52,9 @@ export default class EditPost extends Component {
     axios.get(`/post/${id}`).then((res)=>{
       if(res.data.success){
         this.setState({
-          post:res.data.post
+          topic:res.data.post.topic,
+          description:res.data.post.description,
+          postCategory:res.data.post.postCategory
         });
       }
     })
@@ -61,7 +63,7 @@ export default class EditPost extends Component {
   render() {
     return (
       <div className='col-md-8 mt-4 mx-auto'>
-        <h1 className='h3 mb-3 font-weight-normal'>Create New Post</h1>
+        <h1 className='h3 mb-3 font-weight-normal'>Edit Post</h1>
         <form className='needs-validation' noValidate>
           <div className='form-group' style={{marginBottom:'15px'}}>
             <label style={{marginBottom:'5px'}}>Topic</label>
@@ -92,7 +94,7 @@ export default class EditPost extends Component {
 
           <button className='btn btn-success' type='submit' style={{marginTop:'15px'}} onClick={this.onSubmit}>
             <i className='far fa-check-square'></i>
-            &nbsp;save
+            &nbsp;UPDATE
           </button>
 
         </form>

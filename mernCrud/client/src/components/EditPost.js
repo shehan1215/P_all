@@ -2,6 +2,48 @@ import React, { Component } from 'react'
 
 export default class EditPost extends Component {
 
+  constructor(props){
+    super(props);
+    this.state={
+      topic:"",
+      description:"",
+      postCategory:""
+    }
+  }
+
+  handleInputChange = (e)=>{
+    const{name,value} = e.target;
+
+    this.setState({
+      ...this.state,
+      [name]:value
+    })
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    const id = this.props.match.params.id;
+
+    const{topic,description,postCategory} = this.state;
+
+    const data = {
+      topic:topic,
+      description:description,
+      postCategory:postCategory
+    }
+    axios.put(`/posts/update/${id}`,data).then((res)=>{
+      if(res.data.success){
+        this.setState({
+          topic:"",
+          description:"",
+          postCategory:""
+        })
+      }
+
+    })
+
+  }
+
 
   componentDidMount(){
     const id = this.props.match.params.id;

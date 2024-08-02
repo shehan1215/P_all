@@ -26,6 +26,13 @@ export default class Home extends Component {
     })
   }
 
+  onDelete = (id)=>{
+    axios.delete(`post/delete/${id}`).then((res)=>{
+      alert("Delete successed");
+      this.retrievePosts();
+    })
+  }
+
   render() {
     return (
       <div className='container'>
@@ -55,7 +62,7 @@ export default class Home extends Component {
                     <i className='fas fa-edit'></i>&nbsp;Edit
                   </a>
                   &nbsp;
-                  <a className='btn btn-danger' href='#'>
+                  <a className='btn btn-danger' href='#' onClick={()=>this.onDelete(posts._id)}>
                     <i className='far fa-trash-alt'></i>&nbsp;Delete
                   </a>
               </tr>

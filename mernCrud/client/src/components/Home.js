@@ -33,6 +33,16 @@ export default class Home extends Component {
     })
   }
 
+  handleSearch = (e) => {
+    const searchKey = e.currentTarget.value;
+    axios.get("/posts").then(res =>{
+      if(res.data.success){
+        this.filterData(res.data.existingPosts,searchKey)
+      }
+    })
+
+  }
+
   render() {
     return (
       <div className='container'>

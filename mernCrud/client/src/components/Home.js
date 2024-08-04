@@ -36,7 +36,19 @@ export default class Home extends Component {
   render() {
     return (
       <div className='container'>
-        <p>All</p>
+       <div className='row'>
+       <div className='col-lg-9 mt-2 mb-2'>
+       <h4>All Posts</h4>
+       </div>
+       <div className='col-lg-9 mt-2 mb-2'>
+        <input className='form-control'
+        type='search'
+        placeholder='Search'
+        name='searchQuery'
+        onChange={this.handleSearch}>
+        </input>
+       </div>
+       </div>
         <table className='table'>
           <thead>
             <tr>

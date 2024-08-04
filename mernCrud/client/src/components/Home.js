@@ -33,6 +33,11 @@ export default class Home extends Component {
     })
   }
 
+  filterData = (posts,searchKey)=>{
+    const result = posts.filter((post)=>post.topic.includes(searchKey))
+    this.setState({posts:result})
+  }
+
   handleSearch = (e) => {
     const searchKey = e.currentTarget.value;
     axios.get("/posts").then(res =>{

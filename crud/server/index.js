@@ -16,7 +16,7 @@ const schemaData = mongoose.Schema({
     email : String,
     mobile : String,
 },{
-    Timestamps : true
+    Timestamps : true // Automatically adds createdAt and updatedAt fields
 })
 const userModel = mongoose.model("user",schemaData)
 

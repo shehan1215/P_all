@@ -18,7 +18,7 @@
 #     print("this value is not included")
 
 
-
+# Use the dictionaries. Therefore, we can iniate by using the { }
 
 x = {
     'a':["hello","good morning"],

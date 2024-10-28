@@ -20,19 +20,28 @@
 
 # Use the dictionaries. Therefore, we can iniate by using the { }
 
-x = {
-    'a':["hello","good morning"],
-    'b':["bye","good night"],
-    'c':29,
-}
-y = x['b']
-y.append("have a nice day")
-print(x)
+# x = {
+#     'a':["hello","good morning"],
+#     'b':["bye","good night"],
+#     'c':29,
+# }
+# y = x['b']
+# y.append("have a nice day")
+# print(x)
 
-z = x['c']
-z = 21
-print(z)
-_get = x.get("a")
-print(_get)
-del x['c']
-print(x)
+# z = x['c']
+# z = 21
+# print(z)
+# _get = x.get("a")
+# print(_get)
+# del x['c']
+# print(x)
+
+# ========================================
+
+items = [21, 34, 54, 12, 34]
+
+print(type(items))
+
+for i in items:
+    print(i)

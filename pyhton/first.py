@@ -46,4 +46,14 @@ for i in x:
     if max < i:
         max = i
 
-print('max is: ', max)        
+print('max is: ', max)  
+
+items = [23,32,34,12,56,25]      
+
+max1 = items[0]
+
+for i in items:
+    if i > max1:
+        max1 = i
+
+print("second max is: ", max1)

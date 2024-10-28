@@ -39,9 +39,11 @@
 
 # ========================================
 
-items = [21, 34, 54, 12, 34]
+x = [12,21,567,123,88]
 
-print(type(items))
+max = x[0]
+for i in x:
+    if max < i:
+        max = i
 
-for i in items:
-    print(i)
+print('max is: ', max)        

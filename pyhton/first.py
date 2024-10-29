@@ -89,13 +89,21 @@
 # ====================================================================
 # packed args and keyword arguments
 
-def formDetails(**params):
-# def formDetails(*values,**params):
-#     print(values)
-    if "country" not in params:
-        print("Error")
-    else:
-        print("hello ",params["name"])
+# def formDetails(**params):
+# ### def formDetails(*values,**params):
+# ###     print(values)
+#     if "country" not in params:
+#         print("Error")
+#     else:
+#         print("hello ",params["name"])
         
-formDetails(21,34,name="shehan", age=24, city="gampaha") 
-formDetails(name="shan", age=44, city="gampaha", country="Sri lanka")
+# formDetails(name="shehan", age=24, city="gampaha") 
+# formDetails(name="shan", age=44, city="gampaha", country="Sri lanka")
+
+def getTheTotal(*marks):
+    print(type(marks))
+    total = 0
+    for i in marks:
+        total += i
+    print(total)
+getTheTotal(23, 45, 54)

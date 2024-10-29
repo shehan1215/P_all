@@ -65,17 +65,24 @@
 
 def findGrade(marks, subjects = "unknown"):
     if marks < 35:
-        print("You are fail",": ",subjects)
+        print("You are fail for",": ",subjects)
     elif marks >= 35 and marks < 54:
-        print("Your grade is: S", ": ", subjects)
+        print("Your grade is S for ", ": ", subjects)
     elif marks >=55 and marks < 64:
-        print("Your Grade is: C", ": ", subjects)
+        print("Your Grade is C for ", ": ", subjects)
     elif marks >=65 and marks < 74:
-        print("Your Grade is: B",subjects)
+        print("Your Grade is B for ",subjects)
     else:
-        print("Your Grade is: A", subjects)
+        print("Your Grade is A for", subjects)
         
-marksList = [23,56,45,67,78,90]    
-for i in marksList:
+marksList = {
+    65:"Science",
+    56:"Maths",
+    78:"English",
+    12:"History",
+    36:"Art" 
+} 
+  
+for i,x in marksList.items():
     print("=============================")
-    print(findGrade(i))
+    print(findGrade(i,x))

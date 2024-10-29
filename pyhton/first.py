@@ -39,21 +39,36 @@
 
 # ========================================
 
-x = [12,21,567,123,88]
+# x = [12,21,567,123,88]
 
-max = x[0]
-for i in x:
-    if max < i:
-        max = i
+# max = x[0]
+# for i in x:
+#     if max < i:
+#         max = i
 
-print('max is: ', max)  
+# print('max is: ', max)  
 
-items = [23,32,34,12,56,25]      
+# items = [23,32,34,12,56,25]      
 
-max1 = items[0]
+# max1 = items[0]
 
-for i in items:
-    if i > max1:
-        max1 = i
+# for i in items:
+#     if i > max1:
+#         max1 = i
 
-print("second max is: ", max1)
+# print("second max is: ", max1)
+
+# =====================================================
+# functions and arguments
+
+def findGrade(marks):
+    if marks >= 35 and marks < 54:
+        print("S")
+    elif marks >= 55 and marks < 64:
+        print("C")
+    elif marks >= 65 and marks < 74:
+        print("B")
+    elif marks >= 75:
+        print("A")
+
+findGrade(55)

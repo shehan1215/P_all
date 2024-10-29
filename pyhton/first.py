@@ -75,7 +75,7 @@ def findGrade(marks, subjects = "unknown"):
     else:
         print("Your Grade is: A", subjects)
         
-
 marksList = [23,56,45,67,78,90]    
 for i in marksList:
+    print("=============================")
     print(findGrade(i))

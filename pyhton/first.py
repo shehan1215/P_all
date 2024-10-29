@@ -61,28 +61,41 @@
 # =====================================================
 # functions and arguments
 
-
-
-def findGrade(marks, subjects = "unknown"):
-    if marks < 35:
-        print("You are fail for",": ",subjects)
-    elif marks >= 35 and marks < 54:
-        print("Your grade is S for ", ": ", subjects)
-    elif marks >=55 and marks < 64:
-        print("Your Grade is C for ", ": ", subjects)
-    elif marks >=65 and marks < 74:
-        print("Your Grade is B for ",subjects)
-    else:
-        print("Your Grade is A for", subjects)
+# def findGrade(marks, subjects = "unknown"):
+#     if marks < 35:
+#         print("You are fail for",": ",subjects)
+#     elif marks >= 35 and marks < 54:
+#         print("Your grade is S for ", ": ", subjects)
+#     elif marks >=55 and marks < 64:
+#         print("Your Grade is C for ", ": ", subjects)
+#     elif marks >=65 and marks < 74:
+#         print("Your Grade is B for ",subjects)
+#     else:
+#         print("Your Grade is A for", subjects)
         
-marksList = {
-    65:"Science",
-    56:"Maths",
-    78:"English",
-    12:"History",
-    36:"Art" 
-} 
+# marksList = {
+#     65:"Science",
+#     56:"Maths",
+#     78:"English",
+#     12:"History",
+#     36:"Art" 
+# } 
   
-for i,x in marksList.items():
-    print("=============================")
-    print(findGrade(i,x))
+# for i,x in marksList.items():
+#     print("=============================")
+#     print(findGrade(i,x))
+
+
+# ====================================================================
+# packed args and keyword arguments
+
+def formDetails(**params):
+# def formDetails(*values,**params):
+#     print(values)
+    if "country" not in params:
+        print("Error")
+    else:
+        print("hello ",params["name"])
+        
+formDetails(21,34,name="shehan", age=24, city="gampaha") 
+formDetails(name="shan", age=44, city="gampaha", country="Sri lanka")

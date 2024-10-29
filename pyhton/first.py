@@ -61,14 +61,20 @@
 # =====================================================
 # functions and arguments
 
-def findGrade(marks, subjects = "unknown"):
-    if marks >= 35 and marks < 54:
-        print("S", subjects)
-    elif marks >= 55 and marks < 64:
-        print("C", subjects)
-    elif marks >= 65 and marks < 74:
-        print("B", subjects)
-    elif marks >= 75:
-        print("A", subjects)
 
-findGrade(55, "sinhala")
+
+def findGrade(marks, subjects = "unknown"):
+    if marks < 35:
+        print("You are fail",": ",subjects)
+    elif marks >= 35 and marks < 54:
+        print("Your grade is: S", ": ", subjects)
+    elif marks >=55 and marks < 64:
+        print("Your Grade is: C", ": ", subjects)
+    elif marks >=65 and marks < 74:
+        print("Your Grade is: B",subjects)
+    else:
+        print("Your Grade is: A", subjects)
+        
+        
+
+findGrade(75,"English")

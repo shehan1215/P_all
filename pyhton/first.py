@@ -100,10 +100,22 @@
 # formDetails(name="shehan", age=24, city="gampaha") 
 # formDetails(name="shan", age=44, city="gampaha", country="Sri lanka")
 
-def getTheTotal(*marks):
-    print(type(marks))
-    total = 0
-    for i in marks:
-        total += i
-    print(total)
-getTheTotal(23, 45, 54)
+# def getTheTotal(*marks):
+#     print(type(marks))
+#     total = 0
+#     for i in marks:
+#         total += i
+#     print(total)
+# getTheTotal(23, 45, 54)
+
+# ========================= Comprehension ===========================
+
+def odd_numbers(number):
+    return number % 2 == 1
+
+a = [12, 23, 21, 34, 33, 11]
+b = []
+b = [odd_numbers(i) for i in a]
+
+print(a)
+print(b)

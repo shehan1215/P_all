@@ -111,7 +111,7 @@
 # ========================= Comprehension ===========================
 
 def odd_numbers(number):
-    return number % 2 == 1
+    return "odd" if number % 2 == 1 else "even"
 
 a = [12, 23, 21, 34, 33, 11]
 b = []

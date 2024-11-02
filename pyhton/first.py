@@ -130,8 +130,13 @@ def get_odd_numbers(limit):
             yield i
 
 print("Starting point")
-x = get_odd_numbers(10)
+x = get_odd_numbers(8)
 print("end point")
 for i in x:
     print("loop",i)
+print("*" * 20)
+ 
+x = get_odd_numbers(5)
+for i in x:
+    print("loop", i)
 print(x)

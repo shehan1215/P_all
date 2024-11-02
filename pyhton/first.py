@@ -151,3 +151,8 @@ file = open("data.txt")
 #     if not contents:
 #         break   
 #     print(contents)
+
+for i,line in enumerate(file):
+    print(i,line)
+
+file.close()

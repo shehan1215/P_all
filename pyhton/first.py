@@ -152,7 +152,26 @@ file = open("data.txt")
 #         break   
 #     print(contents)
 
-for i,line in enumerate(file):
-    print(i,line)
 
+
+# for i,line in enumerate(file):
+#     print(i,line)
+
+# file.close()
+
+
+
+file = open("data.txt", "w")
+
+x = [str(i) for i in range(0,20)]
+msg = ','.join(x)
+file.write(msg)
+file.close()
+
+file = open("data.txt", "a")
+
+x = [str(i) for i in range(20,25)]
+msg = '\n'.join(x)
+file.write("\n")
+file.write(msg)
 file.close()

@@ -110,12 +110,27 @@
 
 # ========================= Comprehension ===========================
 
-def odd_numbers(number):
-    return "odd" if number % 2 == 1 else "even"
+# def odd_numbers(number):
+#     return "odd" if number % 2 == 1 else "even"
 
-a = [12, 23, 21, 34, 33, 11]
-b = []
-b = [odd_numbers(i) for i in a]
+# a = [12, 23, 21, 34, 33, 11]
+# b = []
+# b = [odd_numbers(i) for i in a]
 
-print(a)
-print(b)
+# print(a)
+# print(b)
+
+
+# Generators =====================
+
+def get_odd_numbers(limit):
+    for i in range(0,limit):
+        if i % 2 == 1:
+            print("odd", i)
+            yield i
+
+print("Starting point")
+x = get_odd_numbers(10)
+print("end point")
+    
+print(x)

@@ -132,5 +132,6 @@ def get_odd_numbers(limit):
 print("Starting point")
 x = get_odd_numbers(10)
 print("end point")
-    
+for i in x:
+    print("loop",i)
 print(x)

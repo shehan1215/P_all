@@ -123,20 +123,31 @@
 
 # Generators =====================
 
-def get_odd_numbers(limit):
-    for i in range(0,limit):
-        if i % 2 == 1:
-            print("odd", i)
-            yield i
+# def get_odd_numbers(limit):
+#     for i in range(0,limit):
+#         if i % 2 == 1:
+#             print("odd", i)
+#             yield i
 
-print("Starting point")
-x = get_odd_numbers(8)
-print("end point")
-for i in x:
-    print("loop",i)
-print("*" * 20)
+# print("Starting point")
+# x = get_odd_numbers(8)
+# print("end point")
+# for i in x:
+#     print("loop",i)
+# print("*" * 20)
  
-x = get_odd_numbers(5)
-for i in x:
-    print("loop", i)
-print(x)
+# x = get_odd_numbers(5)
+# for i in x:
+#     print("loop", i)
+# print(x)
+
+
+# file i/o ==================================
+
+file = open("data.txt")
+
+# while True:
+#     contents = file.read()
+#     if not contents:
+#         break   
+#     print(contents)

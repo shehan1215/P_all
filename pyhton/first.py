@@ -186,3 +186,14 @@ file.write("\n")
 file.write(msg)
 
 """
+
+
+# userInput = input("Enter the number \n")
+# convrt = int(userInput)
+# print(convrt)
+
+# if convrt % 2 == 1:
+#     print("Weird")
+# else:
+#     print("you are correct")
+    

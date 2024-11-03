@@ -144,7 +144,7 @@
 
 # file i/o ==================================
 
-file = open("data.txt")
+# file = open("data.txt")
 
 # while True:
 #     contents = file.read()
@@ -161,25 +161,25 @@ file = open("data.txt")
 
 
 
-file = open("data.txt", "w")
+# file = open("data.txt", "w")
 
-x = [str(i) for i in range(0,20)]
-msg = ','.join(x)
-file.write(msg)
-file.close()
+# x = [str(i) for i in range(0,20)]
+# msg = ','.join(x)
+# file.write(msg)
+# file.close()
 
-file = open("data.txt", "a")
+# file = open("data.txt", "a")
 
-x = [str(i) for i in range(20,25)]
-msg = '\n'.join(x)
-file.write("\n")
-file.write(msg)
-file.close()
+# x = [str(i) for i in range(20,25)]
+# msg = '\n'.join(x)
+# file.write("\n")
+# file.write(msg)
+# file.close()
 
 """
 so we can use with keyword then we dont use the close() method after file open. therefore,
 
-with open("data.txt", "a") as file
+with open("data.txt", "a") as file:
 x = [str(i) for i in range(20,25)]
 msg = '\n'.join(x)
 file.write("\n")

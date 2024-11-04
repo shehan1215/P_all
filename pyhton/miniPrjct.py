@@ -36,17 +36,22 @@ for line in marks_lines:
     
     prevMarks = studentMarks.get(name, 0)
     studentMarks[name] = prevMarks + marks
-    
-      
+  
+message = []        
 for subject, dataset in subjectMarks.items():
     name, marks = get_top_student(subject,dataset)
     msg = f"Top Student for {subject} is {name} got {marks} marks."
     print(msg)
+    message.append(msg)
     
-
 markList = [ (name, marks) for name, marks in studentMarks.items()]
 markList.sort(key=getMarks, reverse=True)
 topNameAndMarks = markList[0]
-print(f"*********************\nTop student is {topNameAndMarks[0]} got {topNameAndMarks[1]} marks\n**********************")
+msg2 = f"*********************\nTop student is {topNameAndMarks[0]} got {topNameAndMarks[1]} marks\n**********************"
+print(msg2)
+message.append(msg2)
 
-
+with open('results.txt', 'w') as outputFile:
+    for msg in message:
+        outputFile.write(msg)
+        outputFile.write('\n')

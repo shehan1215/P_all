@@ -18,6 +18,8 @@ if not lines:
 
 marks_lines = lines[1:]
 subjectMarks = {}
+studentMarks = {}
+
 for line in marks_lines:
     entries = line.split(',')
     name = entries[0].strip()
@@ -28,8 +30,14 @@ for line in marks_lines:
         subjectMarks[subject] = {}
     
     subjectMarks[subject][name] = marks
+    
+    prevMarks = studentMarks.get(name, 0)
+    studentMarks[name] = prevMarks + marks
+    
       
 for subject, dataset in subjectMarks.items():
     name, marks = get_top_student(subject,dataset)
     msg = f"Top Student for {subject} is {name} got {marks} marks."
     print(msg)
+    
+print(studentMarks)

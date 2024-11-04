@@ -1,0 +1,13 @@
+Name, Subject, Marks
+Praneeth, Science, 45
+Sunil, Maths, 89
+Kavinda, English, 78
+Amal, Maths, 55
+Kamal, English, 98
+Praneeth, Maths, 78
+Kusum, English, 45
+Kamal, Maths, 56
+Sunil, Science, 84
+Nilan, Science, 35
+Kalum, English, 57
+Dilan, Science, 42

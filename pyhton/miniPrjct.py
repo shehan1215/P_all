@@ -8,6 +8,9 @@ def get_top_student(subject: str, dataset: dict):
 
     return maxStudent,maxMarks
 
+def getMarks(record: tuple):
+    return record[1]
+
 lines = None
 with open('miniPrjctData.txt') as file:
     lines = file.readlines()
@@ -40,4 +43,10 @@ for subject, dataset in subjectMarks.items():
     msg = f"Top Student for {subject} is {name} got {marks} marks."
     print(msg)
     
-print(studentMarks)
+
+markList = [ (name, marks) for name, marks in studentMarks.items()]
+markList.sort(key=getMarks, reverse=True)
+topNameAndMarks = markList[0]
+print(f"*********************\nTop student is {topNameAndMarks[0]} got {topNameAndMarks[1]} marks\n**********************")
+
+

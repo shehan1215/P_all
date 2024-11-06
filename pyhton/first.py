@@ -197,3 +197,9 @@ file.write(msg)
 # else:
 #     print("you are correct")
     
+# OOP ============================
+class myCar:
+    x = 34
+    
+obj1 = myCar()
+print(obj1.x)

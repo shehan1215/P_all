@@ -199,7 +199,11 @@ file.write(msg)
     
 # OOP ============================
 class Dog:
-    name = "unknown"
+    # name = "unknown"
+    
+    # constructor create
+    def __init__(self,name):
+        self.name = name
     
     def set_name(self,name):
         self.name = name
@@ -209,7 +213,11 @@ class Dog:
         msg = f"calling from bark {self.name}. {message}"
         print(msg)
         
-dog1 = Dog()
-dog1.set_name("Scooby")
+dog1 = Dog("Scooby")
+# dog1.set_name("Scooby")
+dog1.bark("hi")
+
+dog2 = Dog("Drappy")
+dog2.bark("heyy")
 
     

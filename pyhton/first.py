@@ -198,8 +198,18 @@ file.write(msg)
 #     print("you are correct")
     
 # OOP ============================
-class myCar:
-    x = 34
+class Dog:
+    name = "unknown"
     
-obj1 = myCar()
-print(obj1.x)
+    def set_name(self,name):
+        self.name = name
+        print(name)
+        
+    def bark(self,message):
+        msg = f"calling from bark {self.name}. {message}"
+        print(msg)
+        
+dog1 = Dog()
+dog1.set_name("Scooby")
+
+    

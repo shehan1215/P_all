@@ -231,7 +231,7 @@ class Animal:
         
 class Dog(Animal):
     def __init__(self,name='unknown'):
-        super(Dog,self).__init__("Dog")
+        super(Dog,self).__init__("german")
         print("Dog is born")
         self.name = name
 
@@ -245,3 +245,4 @@ class Dog(Animal):
 
 dog1 = Dog()
 dog1.talk()
+print(dog1.breed)

@@ -198,26 +198,50 @@ file.write(msg)
 #     print("you are correct")
     
 # OOP ============================
-class Dog:
-    # name = "unknown"
+# class Dog:
+#     # name = "unknown"
     
-    # constructor create
-    def __init__(self,name):
+#     # constructor create
+#     def __init__(self,name):
+#         self.name = name
+    
+#     def set_name(self,name):
+#         self.name = name
+#         print(name)
+        
+#     def bark(self,message):
+#         msg = f"calling from bark {self.name}. {message}"
+#         print(msg)
+        
+# dog1 = Dog("Scooby")
+# # dog1.set_name("Scooby")
+# dog1.bark("hi")
+
+# dog2 = Dog("Drappy")
+# dog2.bark("heyy")
+
+
+class Animal:
+    def __init__(self,breed):
+        print("Hello from Animal")
+        self.breed = breed
+    
+    def talk(self):
+        print("Animal is talking")
+        
+class Dog(Animal):
+    def __init__(self,name='unknown'):
+        super(Dog,self).__init__("Dog")
+        print("Dog is born")
         self.name = name
-    
+
     def set_name(self,name):
         self.name = name
-        print(name)
-        
-    def bark(self,message):
-        msg = f"calling from bark {self.name}. {message}"
-        print(msg)
-        
-dog1 = Dog("Scooby")
-# dog1.set_name("Scooby")
-dog1.bark("hi")
-
-dog2 = Dog("Drappy")
-dog2.bark("heyy")
-
     
+    def bark(self,message):
+        msg = f"woof woof. I'm {self.name}.{message}"
+        print(msg)
+
+
+dog1 = Dog()
+dog1.talk()
